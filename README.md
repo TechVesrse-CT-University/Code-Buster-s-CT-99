@@ -39,6 +39,27 @@ Natural interaction for illiterate or low-literacy farmers. Ask questions via mi
 Clean and simple web interface built with farmers in mind.
 
 ---
+### Outcome of Website named FarmAssist
+![Screenshot 2025-04-11 060343](https://github.com/user-attachments/assets/72a0742e-3979-4f19-be07-8afb01da503a)
+
+![2](https://github.com/user-attachments/assets/75ce22a7-1492-4ba0-9da8-0c6dbacffd01)
+
+![3](https://github.com/user-attachments/assets/5a7380fe-8636-4ec4-b152-32cc53866ce4)
+
+![4](https://github.com/user-attachments/assets/fce99a30-2b91-4e07-98df-2ec33f889364)
+
+![5](https://github.com/user-attachments/assets/9a62097b-fc6a-4fb8-91bc-f8482af1c0c7)
+
+![6](https://github.com/user-attachments/assets/aec3088d-b7db-447f-8cbb-cef71a42e301)
+
+---
+### Output of AI Voice Assistant named Agri-Assistant
+
+![chatbot ss](https://github.com/user-attachments/assets/3d04ad82-f594-4b65-8eaf-f0d50aba5d72)
+
+![lang  pref](https://github.com/user-attachments/assets/9148936b-0b18-4427-9d29-c5be322473d6)
+
+
 
 ## 💻 Tech Stack
 
