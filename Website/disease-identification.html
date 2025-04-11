@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Identification - FarmAssist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/disease-identification.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                        <span class="logo-text">FarmAssist</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="crop-selection.html">Crop Selection</a></li>
+                        <li><a href="soil-management.html">Soil Management</a></li>
+                        <li><a href="disease-identification.html" class="active">Disease Identification</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1>Disease Identification</h1>
+            <p>Early detection of plant diseases is crucial for effective management. Learn to identify common crop diseases and implement timely interventions.</p>
+        </div>
+    </section>
+
+    <!-- Disease ID Tool -->
+    <section class="id-tool">
+        <div class="container">
+            <div class="tool-card">
+                <h2>Disease Identification Tool</h2>
+                
+                <div class="tool-grid">
+                    <div class="upload-section">
+                        <p>Upload a photo of your affected plant for quick identification of common diseases and recommended treatments.</p>
+                        
+                        <div class="upload-box" id="upload-box">
+                            <i class="fas fa-camera"></i>
+                            <p>Upload a photo of the affected plant</p>
+                            <label for="plant-image" class="btn btn-primary">
+                                <i class="fas fa-upload"></i> Upload Image
+                            </label>
+                            <input type="file" id="plant-image" accept="image/*" hidden>
+                        </div>
+                        
+                        <div class="crop-selection">
+                            <h3>Select Crop Type:</h3>
+                            <select id="crop-type">
+                                <option value="">-- Select your crop --</option>
+                                <option value="wheat">Wheat</option>
+                                <option value="rice">Rice</option>
+                                <option value="maize">Maize</option>
+                                <option value="potato">Potato</option>
+                                <option value="tomato">Tomato</option>
+                                <option value="cotton">Cotton</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-section">
+                        <h3>Recent Identifications:</h3>
+                        
+                        <div class="recent-items">
+                            <div class="recent-item">
+                                <img src="data:image/jpeg;base64,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" alt="Wheat rust">
+                                <div class="recent-info">
+                                    <h4>Wheat Leaf Rust</h4>
+                                    <p class="recent-date">Identified 2 days ago</p>
+                                    <a href="#" class="view-treatment">View treatment</a>
+                                </div>
+                            </div>
+                            
+                            <div class="recent-item">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAHlIPct0VZ0-ga983NFKHmb-PobRdcEDNPw&s">
+                                <div class="recent-info">
+                                    <h4>Tomato Early Blight</h4>
+                                    <p class="recent-date">Identified 1 week ago</p>
+                                    <a href="#" class="view-treatment">View treatment</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Crop Diseases -->
+    <section class="common-diseases">
+        <div class="container">
+            <h2>Common Crop Diseases</h2>
+            
+            <div id="loading-indicator" class="loading-indicator">
+                <div class="spinner"></div>
+                <p>Loading disease information...</p>
+            </div>
+            
+            <div id="disease-grid" class="disease-grid">
+                <!-- Disease cards will be loaded by JavaScript -->
+            </div>
+            
+            <div class="view-more-container">
+                <a href="all-disease-guides.html" class="btn btn-secondary view-more-btn">View All Disease Guides</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                    <span class="logo-text">FarmAssist</span>
+                    <p>Empowering farmers with technology and knowledge.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="crop-selection.html">Crop Selection</a></li>
+                            <li><a href="soil-management.html">Soil Management</a></li>
+                            <li><a href="disease-identification.html">Disease Identification</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FarmAssist. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/disease-identification.js"></script>
+</body>
+</html>

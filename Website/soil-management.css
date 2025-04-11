@@ -1,0 +1,258 @@
+/* Soil Management Page Specific Styles */
+
+/* Page Title */
+.page-title {
+    padding: 140px 0 50px;
+    background-color: rgba(121, 85, 72, 0.1);
+    text-align: center;
+}
+
+.page-title h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.page-title p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* Soil Types Section */
+.soil-types {
+    padding: 60px 0;
+    background-color: var(--light-color);
+}
+
+.soil-types h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--earth-color);
+    margin-bottom: 40px;
+}
+
+.soil-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    position: relative;
+    min-height: 200px;
+}
+
+.soil-card {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.soil-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.soil-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.soil-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.soil-card:hover .soil-image img {
+    transform: scale(1.05);
+}
+
+.soil-details {
+    padding: 20px;
+}
+
+.soil-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--earth-color);
+    margin-bottom: 15px;
+}
+
+.soil-characteristics {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.soil-characteristics li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.soil-characteristics li i {
+    margin-right: 8px;
+    margin-top: 3px;
+    font-size: 0.9rem;
+}
+
+.soil-characteristics .positive i {
+    color: #4CAF50;
+}
+
+.soil-characteristics .negative i {
+    color: #F44336;
+}
+
+/* Management Practices Section */
+.management-practices {
+    padding: 60px 0 80px;
+    background-color: var(--bg-light);
+}
+
+.practices-card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+.practices-card h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.practices-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.practice-item {
+    margin-bottom: 25px;
+}
+
+.practice-item h3 {
+    font-size: 1.3rem;
+    color: var(--earth-color);
+    margin-bottom: 10px;
+}
+
+.practice-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.help-section {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.help-section h3 {
+    font-size: 1.3rem;
+    color: var(--earth-color);
+    margin-bottom: 20px;
+}
+
+.help-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Loading Indicator */
+.loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(121, 85, 72, 0.2);
+    border-top: 4px solid var(--earth-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .soil-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title h1 {
+        font-size: 2rem;
+    }
+    
+    .practices-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .help-buttons {
+        flex-direction: column;
+    }
+    
+    .help-buttons .btn {
+        width: 100%;
+    }
+}
+.smart-advisor {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 20px;
+  }
+  .smart-advisor h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+  
+  .form-row {
+    margin-bottom: 15px;
+  }
+  .btn-tertiary
+  {
+    background-color: #4CAF50;
+  }
+  
+  .form-row label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-row input,
+  .form-row select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #4CAF50;
+  }
+
+  

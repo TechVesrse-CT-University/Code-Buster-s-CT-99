@@ -1,0 +1,106 @@
+<!-- request-soil-testing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request Soil Testing</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      margin: 0;
+      padding: 0;
+    }
+  
+    .container {
+      max-width: 500px;
+      margin: 80px auto;
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+  
+    form label {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #333;
+    }
+  
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 15px;
+    }
+  
+    form textarea {
+      resize: vertical;
+    }
+  
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 20px;
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+  
+    .btn:hover {
+      background-color: #43a047;
+    }
+  </style>
+</head>
+
+  
+<body>
+  <div class="container">
+    <h1>Soil Testing Request</h1>
+    <p>Please fill in the form below to request a soil test. Our team will contact you shortly.</p>
+
+    <form action="#" method="POST" class="soil-form">
+      <label>Name:</label>
+      <input type="text" name="name" required />
+
+      <label>Email:</label>
+      <input type="email" name="email" required />
+
+      <label>Farm Location:</label>
+      <input type="text" name="location" required />
+
+      <label>Soil Concerns (Optional):</label>
+      <textarea name="concerns" rows="4"></textarea>
+
+      <button type="submit" class="btn btn-primary">Submit Request</button>
+    </form>
+  </div>
+</body>
+</html>

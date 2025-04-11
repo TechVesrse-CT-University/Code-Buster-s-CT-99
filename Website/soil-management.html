@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Management - FarmAssist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/soil-management.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                        <span class="logo-text">FarmAssist</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="crop-selection.html">Crop Selection</a></li>
+                        <li><a href="soil-management.html" class="active">Soil Management</a></li>
+                        <li><a href="disease-identification.html">Disease Identification</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1>Soil Management</h1>
+            <p>Healthy soil is the foundation of successful farming. Learn how to analyze, maintain, and improve your soil for optimal crop growth.</p>
+        </div>
+    </section>
+   
+
+    <!-- Soil Types -->
+    <section class="soil-types">
+        <div class="container">
+            <h2>Common Soil Types</h2>
+            
+            <div class="soil-grid" id="soil-grid">
+                <!-- Soil cards will be populated by JavaScript -->
+                <div class="loading-indicator">
+                    <div class="spinner"></div>
+                    <p>Loading soil information...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soil Management Practices -->
+    <section class="management-practices">
+        <div class="container">
+            <div class="practices-card">
+                <h2>Best Soil Management Practices</h2>
+                
+                <div class="practices-grid">
+                    <div class="practices-column">
+                        <div class="practice-item">
+                            <h3>Soil Testing</h3>
+                            <p>Regular soil testing helps determine pH levels and nutrient content, guiding your fertilization and amendment strategies.</p>
+                        </div>
+                        
+                        <div class="practice-item">
+                            <h3>Crop Rotation</h3>
+                            <p>Alternate different types of crops in the same area to maintain soil fertility, reduce pest problems, and prevent soil-borne diseases.</p>
+                        </div>
+                        
+                        <div class="practice-item">
+                            <h3>Cover Crops</h3>
+                            <p>Plant cover crops during off-seasons to prevent soil erosion, suppress weeds, and add organic matter when plowed under.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="practices-column">
+                        <div class="practice-item">
+                            <h3>Organic Matter Addition</h3>
+                            <p>Incorporate compost, manure, or green manures to improve soil structure, increase microbial activity, and enhance nutrient content.</p>
+                        </div>
+                        
+                        <div class="practice-item">
+                            <h3>Reduced Tillage</h3>
+                            <p>Minimize soil disturbance to preserve soil structure, prevent erosion, and maintain beneficial soil organisms.</p>
+                        </div>
+                        
+                        <div class="practice-item">
+                            <h3>Proper Irrigation</h3>
+                            <p>Implement efficient irrigation systems that provide adequate water without causing erosion or nutrient leaching.</p>
+                        </div>
+                    </div>
+                </div>
+              
+
+                <div class="help-section">
+                    <h3>Need Help With Your Soil?</h3>
+                    <div class="help-buttons">
+                        <a href="request-file-testing.html" class="btn btn-primary">Request Soil Testing</a>
+                        <a href="download-soil-guide.html" class="btn btn-secondary">Download Soil Guide</a>
+                    </div>
+                    
+                      
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="smart-advisor">
+        <h3>🌿 Smart Soil Advisor</h3>
+      
+        <div class="form-row">
+          <label>Soil pH:</label>
+          <input type="number" id="ph" step="0.1" placeholder="e.g. 6.5">
+        </div>
+      
+        <div class="form-row">
+          <label>Nitrogen Level:</label>
+          <select id="nitrogen">
+            <option value="">Select</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+      
+        <div class="form-row">
+          <label>Phosphorus Level:</label>
+          <select id="phosphorus">
+            <option value="">Select</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+      
+        <div class="form-row">
+          <label>Potassium Level:</label>
+          <select id="potassium">
+            <option value="">Select</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+      
+        <div class="form-row">
+          <label>Soil Texture:</label>
+          <select id="texture">
+            <option value="">Select</option>
+            <option value="Sandy">Sandy</option>
+            <option value="Clay">Clay</option>
+            <option value="Loamy">Loamy</option>
+            <option value="Silty">Silty</option>
+          </select>
+        </div>
+      
+        <div class="form-row">
+          <label>Water Holding Capacity:</label>
+          <select id="water">
+            <option value="">Select</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+      
+        <button class="btn btn-tertiary" onclick="getSoilRecommendation()">🌾 Get Recommendation</button>
+        <div id="advisorOutput" class="advisor-box" style="display: none; margin-top: 20px;"></div>
+      </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                    <span class="logo-text">FarmAssist</span>
+                    <p>Empowering farmers with technology and knowledge.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="crop-selection.html">Crop Selection</a></li>
+                            <li><a href="soil-management.html">Soil Management</a></li>
+                            <li><a href="disease-identification.html">Disease Identification</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FarmAssist. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+  function getSoilRecommendation() {
+    const ph = parseFloat(document.getElementById("ph").value);
+    const n = document.getElementById("nitrogen").value;
+    const p = document.getElementById("phosphorus").value;
+    const k = document.getElementById("potassium").value;
+    const texture = document.getElementById("texture").value;
+    const water = document.getElementById("water").value;
+
+    const output = document.getElementById("advisorOutput");
+
+    if (!ph || !n || !p || !k || !texture || !water) {
+      output.innerHTML = `<p style="color:red;">⚠️ Please fill in all fields.</p>`;
+      output.style.display = "block";
+      return;
+    }
+
+    let crop = "";
+    let fertilizer = "";
+    let watering = "";
+    let soilTip = "";
+
+    // Basic logic for recommendation
+    if (ph >= 6 && ph <= 7 && n === "Medium" && p === "Medium" && k === "Medium" && texture === "Loamy") {
+      crop = "✅ Suitable crops: Wheat, Maize, Rice, Barley.";
+      fertilizer = "🧪 Use NPK 10-10-10 balanced fertilizer.";
+    } else if (ph < 6) {
+      crop = "🥕 Try acid-loving crops like Carrots, Potatoes.";
+      fertilizer = "🔁 Apply lime and compost.";
+    } else {
+      crop = "🧺 Try general crops like Spinach, Beans, or Onions.";
+      fertilizer = "💡 Use organic compost + specific nutrient mix.";
+    }
+
+    // Watering tip
+    watering = water === "Low"
+      ? "💧 Use drip irrigation and mulching."
+      : water === "High"
+      ? "⚠️ Ensure proper drainage."
+      : "💦 Water moderately 2–3 times per week.";
+
+    // Soil tip
+    switch (texture) {
+      case "Clay":
+        soilTip = "🧱 Clay soil retains water — mix with compost.";
+        break;
+      case "Sandy":
+        soilTip = "🏜️ Sandy soil drains fast — add organic matter.";
+        break;
+      case "Loamy":
+        soilTip = "🌱 Loamy is ideal — maintain with mulch.";
+        break;
+      case "Silty":
+        soilTip = "🌊 Silty may compact — loosen with compost.";
+        break;
+    }
+
+    output.innerHTML = `
+      <h4>🌾 Crop Suggestion:</h4><p>${crop}</p>
+      <h4>🧪 Fertilizer Tip:</h4><p>${fertilizer}</p>
+      <h4>💧 Watering Advice:</h4><p>${watering}</p>
+      <h4>🪵 Soil Management:</h4><p>${soilTip}</p>
+    `;
+    output.style.display = "block";
+  }
+</script>
+
+
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/soil-management.js"></script>
+</body>
+</html>

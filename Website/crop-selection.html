@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Selection - FarmAssist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/crop-selection.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                        <span class="logo-text">FarmAssist</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="crop-selection.html" class="active">Crop Selection</a></li>
+                        <li><a href="soil-management.html">Soil Management</a></li>
+                        <li><a href="disease-identification.html">Disease Identification</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <h1>Crop Selection</h1>
+            <p>Choose the right crops for your land based on soil type, climate conditions, and market demand to maximize your yields and profits.</p>
+        </div>
+    </section>
+
+    <!-- Selection Tools -->
+    <section class="selection-tools">
+        <div class="container">
+            <div class="tools-grid">
+                <div class="selection-card">
+                    <h2>Select Your Region & Soil</h2>
+                    <form id="crop-selection-form" class="selection-form">
+                        <div class="form-group">
+                            <label for="region">Region:</label>
+                            <select id="region" name="region">
+                                <option value="">-- Select your region --</option>
+                                <option value="north">Northern India</option>
+                                <option value="south">Southern India</option>
+                                <option value="east">Eastern India</option>
+                                <option value="west">Western India</option>
+                                <option value="central">Central India</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Soil Type:</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="clay" name="soilType" value="clay">
+                                    <label for="clay">Clay Soil</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="sandy" name="soilType" value="sandy">
+                                    <label for="sandy">Sandy Soil</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="loamy" name="soilType" value="loamy">
+                                    <label for="loamy">Loamy Soil</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="silt" name="soilType" value="silt">
+                                    <label for="silt">Silty Soil</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">Get Recommendations</button>
+                    </form>
+                </div>
+                
+                <div class="calendar-card">
+                    <h2>Seasonal Calendar</h2>
+                    <div class="calendar-grid">
+                        <div class="season-box kharif">
+                            <h3>Kharif (Monsoon)</h3>
+                            <p class="season-period">June - October</p>
+                            <ul class="season-crops">
+                                <li>Rice</li>
+                                <li>Maize</li>
+                                <li>Soybean</li>
+                                <li>Cotton</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="season-box rabi">
+                            <h3>Rabi (Winter)</h3>
+                            <p class="season-period">October - March</p>
+                            <ul class="season-crops">
+                                <li>Wheat</li>
+                                <li>Barley</li>
+                                <li>Mustard</li>
+                                <li>Peas</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="season-box zaid">
+                            <h3>Zaid (Summer)</h3>
+                            <p class="season-period">March - June</p>
+                            <ul class="season-crops">
+                                <li>Watermelon</li>
+                                <li>Cucumber</li>
+                                <li>Pumpkin</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="season-box year-round">
+                            <h3>Year-Round</h3>
+                            <p class="season-period">Multiple harvests</p>
+                            <ul class="season-crops">
+                                <li>Sugarcane</li>
+                                <li>Certain Vegetables</li>
+                                <li>Fruit orchards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Recommendations -->
+    <section class="crop-recommendations">
+        <div class="container">
+            <h2>Recommended Crops</h2>
+            
+            <div id="loading-indicator" class="loading-indicator">
+                <div class="spinner"></div>
+                <p>Loading crop recommendations...</p>
+            </div>
+            
+            <div id="crop-results" class="crop-grid">
+                <!-- Crop cards will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="view-more-container">
+                <a href="all-crop-guides.html" class="btn btn-secondary view-more-btn">View All Crop Guides</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                    <span class="logo-text">FarmAssist</span>
+                    <p>Empowering farmers with technology and knowledge.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="crop-selection.html">Crop Selection</a></li>
+                            <li><a href="soil-management.html">Soil Management</a></li>
+                            <li><a href="disease-identification.html">Disease Identification</a></li>
+                            <li><a href="community.html">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FarmAssist. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/crop-selection.js"></script>
+</body>
+</html>
